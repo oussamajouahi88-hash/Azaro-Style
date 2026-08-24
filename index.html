@@ -9,7 +9,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
         }
 
         html {
@@ -17,48 +17,53 @@
         }
 
         body {
-            background: #f7f7f7;
-            color: #111;
+            background: #0b0b0b;
+            color: #f5f5f5;
         }
 
-        /* HEADER STYLE MINIMALISTE */
+        /* HEADER ULTRA-ÉLÉGANT & TRANSPARENT */
         header {
-            position: sticky;
+            position: fixed;
             top: 0;
+            left: 0;
+            width: 100%;
             z-index: 1000;
-            background: #000000;
-            color: white;
-            height: 75px;
+            background: rgba(11, 11, 11, 0.85);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            height: 90px;
             display: flex;
             align-items: center;
             justify-content: space-between;
             padding: 0 5%;
-            box-shadow: 0 3px 15px rgba(0,0,0,0.2);
+            transition: 0.3s ease;
         }
 
         .menu-toggle {
             background: none;
             border: none;
             color: white;
-            font-size: 24px;
+            font-size: 22px;
             cursor: pointer;
+            letter-spacing: 1px;
         }
 
         .header-logo {
             text-decoration: none;
             color: white;
-            font-size: 24px;
-            font-weight: 900;
-            letter-spacing: 3px;
+            font-size: 28px;
+            font-weight: 300;
+            letter-spacing: 6px;
         }
 
         .header-logo span {
+            font-weight: 700;
             color: #d4af37;
         }
 
         .header-icons {
             display: flex;
-            gap: 20px;
+            gap: 25px;
             align-items: center;
         }
 
@@ -66,165 +71,197 @@
             background: none;
             border: none;
             color: white;
-            font-size: 20px;
+            font-size: 18px;
             cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .header-icons button:hover {
+            color: #d4af37;
         }
 
         .cart-badge-count {
             background: #d4af37;
-            color: black;
-            font-size: 11px;
+            color: #0b0b0b;
+            font-size: 10px;
             padding: 2px 6px;
             border-radius: 50%;
             font-weight: bold;
             margin-left: -5px;
         }
 
-        /* HERO STYLE STREETWEAR */
+        /* HERO IMMERSIF ET LUXUEUX */
         .hero {
             position: relative;
-            min-height: 500px;
-            background: #111 url("https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=1800&q=80") no-repeat center right / cover;
+            height: 100vh;
+            background: url("https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=2000&q=90") no-repeat center center / cover;
             display: flex;
             align-items: center;
-            padding: 50px 7%;
-            color: white;
+            justify-content: center;
+            text-align: center;
+            padding: 0 20px;
         }
 
         .hero::before {
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(90deg, rgba(0,0,0,0.95) 30%, rgba(0,0,0,0.6) 70%, rgba(0,0,0,0.3) 100%);
+            background: linear-gradient(180deg, rgba(11,11,11,0.4) 0%, rgba(11,11,11,0.8) 80%, rgba(11,11,11,1) 100%);
         }
 
         .hero-content {
             position: relative;
             z-index: 2;
-            max-width: 600px;
+            max-width: 800px;
+            animation: fadeIn 1.2s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero-sub {
+            font-size: 12px;
+            letter-spacing: 8px;
+            color: #d4af37;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            font-weight: 600;
         }
 
         .hero-logo-text {
-            font-size: 48px;
-            font-weight: 900;
-            letter-spacing: 5px;
-            margin-bottom: 10px;
+            font-size: 64px;
+            font-weight: 300;
+            letter-spacing: 12px;
+            margin-bottom: 15px;
             color: white;
         }
 
         .hero-logo-text span {
+            font-weight: 700;
             color: #d4af37;
         }
 
-        .hero-sub {
-            font-size: 11px;
-            letter-spacing: 5px;
-            color: #ccc;
-            margin-bottom: 30px;
-            text-transform: uppercase;
+        .hero-desc {
+            font-size: 15px;
+            color: #cccccc;
+            line-height: 1.6;
+            letter-spacing: 2px;
+            margin-bottom: 40px;
+            font-weight: 300;
         }
 
         .shop-all-btn {
             display: inline-block;
-            padding: 12px 35px;
-            border: 2px solid white;
-            color: white;
+            padding: 15px 45px;
+            border: 1px solid #d4af37;
+            color: #ffffff;
             text-decoration: none;
-            font-weight: bold;
-            font-size: 14px;
-            letter-spacing: 2px;
-            transition: 0.3s;
-            margin-bottom: 25px;
-            background: rgba(0,0,0,0.4);
+            font-weight: 500;
+            font-size: 13px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            transition: all 0.4s ease;
+            background: transparent;
         }
 
         .shop-all-btn:hover {
-            background: white;
-            color: black;
+            background: #d4af37;
+            color: #0b0b0b;
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.4);
         }
 
-        .hero-desc {
-            font-size: 13px;
-            color: #aaa;
-            line-height: 1.5;
-            letter-spacing: 1px;
-        }
-
-        /* SECTIONS */
+        /* SECTIONS DE BASE */
         section {
-            padding: 80px 7%;
+            padding: 100px 7%;
         }
 
         .section-title {
-            text-align: left;
-            margin-bottom: 40px;
+            text-align: center;
+            margin-bottom: 60px;
         }
 
         .section-title h2 {
-            font-size: 38px;
-            font-weight: 400;
-            letter-spacing: 1px;
+            font-size: 32px;
+            font-weight: 300;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #fff;
+        }
+
+        .section-title h2 span {
+            color: #d4af37;
+            font-weight: 600;
         }
 
         /* CATEGORIES */
         .categories {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
+            gap: 30px;
         }
 
         .category {
-            height: 350px;
+            height: 450px;
             position: relative;
             overflow: hidden;
             cursor: pointer;
-            border-radius: 4px;
+            border-radius: 2px;
         }
 
         .category img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: 0.5s;
+            filter: grayscale(20%) brightness(0.85);
+            transition: 0.6s cubic-bezier(0.25, 1, 0.5, 1);
         }
 
         .category:hover img {
-            transform: scale(1.05);
+            transform: scale(1.06);
+            filter: grayscale(0%) brightness(1);
         }
 
         .category-overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(transparent, rgba(0,0,0,0.7));
+            background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.85) 100%);
             display: flex;
             align-items: flex-end;
-            padding: 25px;
-            color: white;
+            padding: 30px;
         }
 
         .category-overlay h3 {
-            font-size: 22px;
-            letter-spacing: 1px;
-            font-weight: normal;
+            font-size: 20px;
+            letter-spacing: 3px;
+            font-weight: 300;
+            color: white;
+            text-transform: uppercase;
         }
 
         /* PRODUCTS */
         .products {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 25px;
+            gap: 30px;
         }
 
         .product {
-            background: white;
+            background: #141414;
+            border: 1px solid rgba(255,255,255,0.05);
             border-radius: 4px;
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            transition: 0.3s;
+            transition: 0.4s;
+        }
+
+        .product:hover {
+            border-color: rgba(212, 175, 55, 0.3);
+            transform: translateY(-5px);
         }
 
         .product-image {
-            height: 300px;
+            height: 350px;
             overflow: hidden;
             position: relative;
         }
@@ -233,7 +270,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: 0.4s;
+            transition: 0.5s;
         }
 
         .product:hover img {
@@ -242,98 +279,114 @@
 
         .badge {
             position: absolute;
-            top: 12px;
-            left: 12px;
-            background: #111;
-            color: white;
-            padding: 5px 10px;
-            font-size: 10px;
-            letter-spacing: 1px;
+            top: 15px;
+            left: 15px;
+            background: #d4af37;
+            color: #0b0b0b;
+            padding: 5px 12px;
+            font-size: 9px;
+            letter-spacing: 2px;
             font-weight: bold;
+            text-transform: uppercase;
         }
 
         .product-info {
-            padding: 20px;
+            padding: 25px;
         }
 
         .product-info h3 {
-            font-size: 16px;
-            margin-bottom: 5px;
-            font-weight: 600;
+            font-size: 15px;
+            margin-bottom: 8px;
+            font-weight: 400;
+            letter-spacing: 1px;
+            color: white;
         }
 
         .product-info p {
-            color: #777;
-            font-size: 13px;
-            margin-bottom: 12px;
+            color: #888;
+            font-size: 12px;
+            margin-bottom: 15px;
+            letter-spacing: 0.5px;
         }
 
         .price {
-            color: #111;
+            color: #d4af37;
             font-size: 16px;
-            font-weight: bold;
-            margin-bottom: 15px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
         }
 
         .add-cart {
             width: 100%;
-            padding: 12px;
-            border: none;
-            background: #111;
+            padding: 14px;
+            border: 1px solid rgba(255,255,255,0.2);
+            background: transparent;
             color: white;
             cursor: pointer;
             transition: 0.3s;
-            font-size: 13px;
-            letter-spacing: 1px;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
 
         .add-cart:hover {
             background: #d4af37;
-            color: black;
+            border-color: #d4af37;
+            color: #0b0b0b;
+            font-weight: bold;
         }
 
         /* ABOUT */
         .about {
             background: #111;
-            color: white;
             display: grid;
             grid-template-columns: 1fr 1fr;
             align-items: center;
-            gap: 60px;
+            gap: 80px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
         }
 
         .about img {
             width: 100%;
-            height: 450px;
+            height: 500px;
             object-fit: cover;
+            filter: grayscale(10%);
         }
 
         .about h2 {
             font-size: 38px;
-            margin-bottom: 20px;
+            font-weight: 300;
+            margin-bottom: 25px;
+            letter-spacing: 3px;
         }
 
         .about h2 span {
             color: #d4af37;
+            font-weight: 600;
         }
 
         .about p {
-            color: #ccc;
+            color: #aaa;
             line-height: 1.8;
             margin-bottom: 20px;
-            font-size: 15px;
+            font-size: 14px;
+            letter-spacing: 1px;
         }
 
         .btn {
             display: inline-block;
-            padding: 12px 30px;
+            padding: 14px 35px;
             background: #d4af37;
-            color: #000;
+            color: #0b0b0b;
             text-decoration: none;
             font-weight: bold;
-            font-size: 13px;
-            letter-spacing: 1px;
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
             transition: 0.3s;
+            margin-top: 10px;
         }
 
         .btn:hover {
@@ -341,10 +394,6 @@
         }
 
         /* CONTACT */
-        .contact {
-            background: white;
-        }
-
         .contact-container {
             max-width: 800px;
             margin: auto;
@@ -354,58 +403,68 @@
         .contact-info {
             display: flex;
             justify-content: center;
-            gap: 40px;
+            gap: 60px;
             flex-wrap: wrap;
-            margin-top: 30px;
+            margin-top: 40px;
         }
 
         .contact-item {
-            font-size: 16px;
+            font-size: 14px;
+            letter-spacing: 1px;
+            color: #aaa;
         }
 
         .contact-item strong {
-            color: #111;
+            color: #d4af37;
+            display: block;
+            margin-bottom: 5px;
+            font-size: 16px;
+            letter-spacing: 2px;
         }
 
         /* FOOTER */
         footer {
-            background: #080808;
+            background: #050505;
             color: white;
-            padding: 40px 7%;
+            padding: 60px 7%;
             text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.05);
         }
 
         footer .footer-logo {
-            font-size: 20px;
-            font-weight: bold;
-            letter-spacing: 2px;
-            margin-bottom: 15px;
+            font-size: 22px;
+            font-weight: 300;
+            letter-spacing: 5px;
+            margin-bottom: 20px;
             color: white;
         }
 
         footer .footer-logo span {
             color: #d4af37;
+            font-weight: 700;
         }
 
         footer p {
-            color: #888;
-            font-size: 13px;
+            color: #666;
+            font-size: 12px;
+            letter-spacing: 2px;
         }
 
         /* CART POPUP */
         .cart-box {
             position: fixed;
-            right: -400px;
+            right: -420px;
             top: 0;
-            width: 360px;
+            width: 400px;
             height: 100vh;
-            background: white;
+            background: #141414;
+            color: #fff;
             z-index: 2000;
-            box-shadow: -5px 0 20px rgba(0,0,0,0.2);
-            padding: 25px;
-            transition: 0.4s;
+            box-shadow: -10px 0 30px rgba(0,0,0,0.8);
+            padding: 30px;
+            transition: 0.4s cubic-bezier(0.25, 1, 0.5, 1);
             overflow-y: auto;
-            color: #111;
+            border-left: 1px solid rgba(255,255,255,0.1);
         }
 
         .cart-box.active {
@@ -416,79 +475,95 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 15px;
-            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 20px;
+            margin-bottom: 25px;
+        }
+
+        .cart-header h2 {
+            font-size: 18px;
+            letter-spacing: 2px;
+            font-weight: 300;
         }
 
         .close-cart {
             cursor: pointer;
-            font-size: 25px;
+            font-size: 28px;
+            color: #aaa;
+            transition: color 0.3s;
+        }
+
+        .close-cart:hover {
+            color: #fff;
         }
 
         .cart-item {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid #eee;
-            padding: 15px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            padding: 20px 0;
         }
 
         .cart-item-controls {
             display: flex;
             align-items: center;
-            gap: 10px;
-            margin-top: 5px;
+            gap: 12px;
+            margin-top: 10px;
         }
 
         .cart-item-controls button {
-            background: #ddd;
-            border: none;
-            width: 25px;
-            height: 25px;
+            background: #222;
+            color: white;
+            border: 1px solid rgba(255,255,255,0.1);
+            width: 28px;
+            height: 28px;
             cursor: pointer;
             font-weight: bold;
         }
 
         .cart-total {
-            margin-top: 25px;
-            font-size: 18px;
+            margin-top: 30px;
+            font-size: 16px;
+            letter-spacing: 2px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .cart-total span {
+            color: #d4af37;
             font-weight: bold;
         }
 
         .checkout {
             width: 100%;
-            margin-top: 20px;
-            padding: 15px;
-            background: #111;
-            color: white;
+            margin-top: 25px;
+            padding: 16px;
+            background: #d4af37;
+            color: #0b0b0b;
             border: none;
             cursor: pointer;
             font-weight: bold;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
+            font-size: 12px;
+            text-transform: uppercase;
             transition: 0.3s;
         }
 
         .checkout:hover {
-            background: #d4af37;
-            color: black;
+            background: white;
         }
 
-        /* MOBILE */
-        @media(max-width: 900px) {
-            .products {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .categories, .about {
-                grid-template-columns: 1fr;
-            }
+        /* RESPONSIVE */
+        @media(max-width: 1024px) {
+            .products { grid-template-columns: repeat(2, 1fr); }
         }
 
-        @media(max-width: 600px) {
-            header { padding: 0 20px; }
-            .hero { padding: 40px 20px; }
+        @media(max-width: 768px) {
+            .categories, .about { grid-template-columns: 1fr; }
+            .hero-logo-text { font-size: 40px; letter-spacing: 6px; }
             .products { grid-template-columns: 1fr; }
-            .cart-box { width: 100%; }
+            .cart-box { width: 100%; right: -100%; }
         }
     </style>
 </head>
@@ -496,10 +571,8 @@
 
 <!-- HEADER -->
 <header>
-    <button class="menu-toggle">☰</button>
-    
+    <button class="menu-toggle">☰ MENU</button>
     <a href="#accueil" class="header-logo">OZ<span>ARO</span></a>
-
     <div class="header-icons">
         <button>🔍</button>
         <button onclick="openCart()" style="position:relative; background:none; border:none; cursor:pointer; color: white;">
@@ -508,37 +581,33 @@
     </div>
 </header>
 
-<!-- HERO SECTION -->
+<!-- HERO -->
 <section class="hero" id="accueil">
     <div class="hero-content">
+        <div class="hero-sub">Urban & Unique Collection</div>
         <div class="hero-logo-text">OZ<span>ARO</span></div>
-        <div class="hero-sub">URBAN & UNIQUE</div>
-        
-        <a href="#boutique" class="shop-all-btn">Shop all</a>
-        
-        <div class="hero-desc">
-            Get ready for the style of originality<br>discover real fashion!
-        </div>
+        <p class="hero-desc">Redéfinissez votre style avec des pièces d'exception, conçues pour l'originalité et le raffinement urbain.</p>
+        <a href="#boutique" class="shop-all-btn">Découvrir la collection</a>
     </div>
 </section>
 
 <!-- CATEGORIES -->
 <section id="categories">
     <div class="section-title">
-        <h2>Collections</h2>
+        <h2>Nos <span>Univers</span></h2>
     </div>
     <div class="categories">
         <div class="category">
             <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=900&q=80" alt="Lunettes">
-            <div class="category-overlay"><h3>🕶️ Lunettes</h3></div>
+            <div class="category-overlay"><h3>Lunettes</h3></div>
         </div>
         <div class="category">
             <img src="https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=900&q=80" alt="Montres">
-            <div class="category-overlay"><h3>⌚ Montres</h3></div>
+            <div class="category-overlay"><h3>Montres</h3></div>
         </div>
         <div class="category">
             <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=900&q=80" alt="Bijoux">
-            <div class="category-overlay"><h3>💎 Bijoux</h3></div>
+            <div class="category-overlay"><h3>Bijoux</h3></div>
         </div>
     </div>
 </section>
@@ -546,17 +615,17 @@
 <!-- PRODUCTS -->
 <section id="boutique">
     <div class="section-title">
-        <h2>Nos produits</h2>
+        <h2>Sélection <span>ExCLUSIVE</span></h2>
     </div>
     <div class="products">
         <div class="product">
             <div class="product-image">
-                <span class="badge">NOUVEAU</span>
+                <span class="badge">Nouveau</span>
                 <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=800&q=80" alt="Lunettes Milano">
             </div>
             <div class="product-info">
                 <h3>Lunettes Milano</h3>
-                <p>Lunettes élégantes pour homme</p>
+                <p>Accessoire urbain d'exception</p>
                 <div class="price">299 DH</div>
                 <button class="add-cart" onclick="addToCart('Lunettes Milano', 299)">Ajouter au panier</button>
             </div>
@@ -568,7 +637,7 @@
             </div>
             <div class="product-info">
                 <h3>Montre Classic</h3>
-                <p>Montre élégante et moderne</p>
+                <p>Élégance et précision</p>
                 <div class="price">499 DH</div>
                 <button class="add-cart" onclick="addToCart('Montre Classic', 499)">Ajouter au panier</button>
             </div>
@@ -576,12 +645,12 @@
 
         <div class="product">
             <div class="product-image">
-                <span class="badge">BEST SELLER</span>
+                <span class="badge">Tendance</span>
                 <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=800&q=80" alt="Bracelet Premium">
             </div>
             <div class="product-info">
                 <h3>Bracelet Premium</h3>
-                <p>Bracelet élégant homme</p>
+                <p>Finition acier inoxydable</p>
                 <div class="price">199 DH</div>
                 <button class="add-cart" onclick="addToCart('Bracelet Premium', 199)">Ajouter au panier</button>
             </div>
@@ -593,7 +662,7 @@
             </div>
             <div class="product-info">
                 <h3>Collier Élégance</h3>
-                <p>Bijou femme tendance</p>
+                <p>Design unique et épuré</p>
                 <div class="price">249 DH</div>
                 <button class="add-cart" onclick="addToCart('Collier Élégance', 249)">Ajouter au panier</button>
             </div>
@@ -605,23 +674,23 @@
 <section class="about" id="apropos">
     <img src="https://images.unsplash.com/photo-1523170335258-f5ed11844a49?auto=format&fit=crop&w=1200&q=80" alt="À propos">
     <div>
-        <h2>Bienvenue chez <span>OZARO</span></h2>
-        <p>OZARO est une boutique dédiée aux accessoires modernes et urbains.</p>
-        <p>Lunettes, montres et bijoux sélectionnés pour vous permettre d'exprimer votre personnalité et votre style unique au quotidien.</p>
-        <a href="#boutique" class="btn">VOIR NOS PRODUITS</a>
+        <h2>L'Esprit <span>OZARO</span></h2>
+        <p>Né d'une vision moderne du style urbain, OZARO propose des accessoires soigneusement sélectionnés pour affirmer votre singularité.</p>
+        <p>Alliant design contemporain et finitions irréprochables, chaque pièce est pensée pour accompagner votre quotidien avec audace et élégance.</p>
+        <a href="#boutique" class="btn">Explorer la gamme</a>
     </div>
 </section>
 
 <!-- CONTACT -->
 <section class="contact" id="contact">
     <div class="section-title">
-        <h2>Contactez-nous</h2>
+        <h2>Restons en <span>Contact</span></h2>
     </div>
     <div class="contact-container">
         <div class="contact-info">
-            <div class="contact-item">📱 <strong>WhatsApp</strong><br>+212 780 091 070</div>
-            <div class="contact-item">📧 <strong>Email</strong><br>contact@ozaro.com</div>
-            <div class="contact-item">📍 <strong>Maroc</strong><br>Livraison partout au Maroc</div>
+            <div class="contact-item"><strong>WHATSAPP</strong> +212 780 091 070</div>
+            <div class="contact-item"><strong>EMAIL</strong> contact@ozaro.com</div>
+            <div class="contact-item"><strong>LIVRAISON</strong> Partout au Maroc</div>
         </div>
     </div>
 </section>
@@ -629,22 +698,22 @@
 <!-- FOOTER -->
 <footer>
     <div class="footer-logo">OZ<span>ARO</span></div>
-    <p>© 2026 OZARO — Tous droits réservés.</p>
+    <p>© 2026 OZARO. TOUS DROITS RÉSERVÉS.</p>
 </footer>
 
 <!-- PANIER -->
 <div class="cart-box" id="cart-box">
     <div class="cart-header">
-        <h2>Votre panier</h2>
+        <h2>Votre Panier</h2>
         <span class="close-cart" onclick="closeCart()">×</span>
     </div>
     <div id="cart-items">
-        <p>Votre panier est vide.</p>
+        <p style="color: #777; font-size: 13px; letter-spacing: 1px;">Votre panier est vide.</p>
     </div>
     <div class="cart-total">
         Total : <span id="cart-total">0</span> DH
     </div>
-    <button class="checkout" onclick="checkout()">COMMANDER SUR WHATSAPP</button>
+    <button class="checkout" onclick="checkout()">Commander sur WhatsApp</button>
 </div>
 
 <script>
@@ -689,7 +758,7 @@
         cartCount.innerText = totalCount;
 
         if (cart.length === 0) {
-            cartItems.innerHTML = "<p>Votre panier est vide.</p>";
+            cartItems.innerHTML = "<p style='color: #777; font-size: 13px; letter-spacing: 1px;'>Votre panier est vide.</p>";
             cartTotal.innerText = "0";
             return;
         }
@@ -704,15 +773,15 @@
             html += `
                 <div class="cart-item">
                     <div>
-                        <strong>${item.name}</strong><br>
-                        ${item.price} DH x ${item.quantity} = <strong>${itemTotal} DH</strong>
+                        <strong style="font-size: 14px; letter-spacing: 1px;">${item.name}</strong><br>
+                        <span style="color: #aaa; font-size: 12px;">${item.price} DH x ${item.quantity}</span>
                         <div class="cart-item-controls">
                             <button onclick="changeQuantity(${index}, -1)">-</button>
-                            <span>${item.quantity}</span>
+                            <span style="font-size: 13px;">${item.quantity}</span>
                             <button onclick="changeQuantity(${index}, 1)">+</button>
                         </div>
                     </div>
-                    <button onclick="removeFromCart(${index})" style="border:none;background:none;cursor:pointer;font-size:16px;">❌</button>
+                    <button onclick="removeFromCart(${index})" style="border:none;background:none;cursor:pointer;color:#777;font-size:16px;">×</button>
                 </div>
             `;
         });
@@ -746,7 +815,6 @@
         message += `%0ATotal : ${total} DH`;
 
         const phone = "212780091070"; 
-
         window.open("https://wa.me/" + phone + "?text=" + message, "_blank");
     }
 </script>
