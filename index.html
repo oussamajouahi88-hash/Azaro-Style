@@ -3,9 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>OZARO STYLE | Lunettes, Montres & Bijoux</title>
-
+    <title>OZARO | Urban & Unique</title>
     <style>
         * {
             margin: 0;
@@ -23,104 +21,129 @@
             color: #111;
         }
 
-        /* HEADER */
+        /* HEADER STYLE MINIMALISTE */
         header {
             position: sticky;
             top: 0;
             z-index: 1000;
-            background: #0b0b0b;
+            background: #000000;
             color: white;
             height: 75px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 0 7%;
+            padding: 0 5%;
             box-shadow: 0 3px 15px rgba(0,0,0,0.2);
         }
 
-        .logo {
-            font-size: 27px;
-            font-weight: bold;
-            letter-spacing: 3px;
-        }
-
-        .logo span {
-            color: #d4af37;
-        }
-
-        nav {
-            display: flex;
-            gap: 30px;
-        }
-
-        nav a {
+        .menu-toggle {
+            background: none;
+            border: none;
             color: white;
-            text-decoration: none;
-            font-size: 15px;
-            transition: 0.3s;
-        }
-
-        nav a:hover {
-            color: #d4af37;
-        }
-
-        .cart {
-            background: #d4af37;
-            color: black;
-            padding: 10px 15px;
-            border-radius: 25px;
+            font-size: 24px;
             cursor: pointer;
-            font-weight: bold;
         }
 
-        /* HERO */
-        .hero {
-            min-height: 650px;
-            background:
-                linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.65)),
-                url("https://images.unsplash.com/photo-1612817288484-6f916006741a?auto=format&fit=crop&w=1800&q=80")
-                center/cover;
+        .header-logo {
             display: flex;
             align-items: center;
-            justify-content: center;
-            text-align: center;
+            gap: 10px;
+            text-decoration: none;
             color: white;
-            padding: 40px 20px;
+        }
+
+        /* Style pour intégrer votre logo dans l'en-tête */
+        .header-logo img {
+            height: 40px;
+            object-fit: contain;
+        }
+
+        .header-icons {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .header-icons button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .cart-badge-count {
+            background: #d4af37;
+            color: black;
+            font-size: 11px;
+            padding: 2px 6px;
+            border-radius: 50%;
+            font-weight: bold;
+            margin-left: -5px;
+        }
+
+        /* HERO STYLE STREETWEAR */
+        .hero {
+            position: relative;
+            min-height: 500px;
+            background: #111 url("https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=1800&q=80") no-repeat center right / cover;
+            display: flex;
+            align-items: center;
+            padding: 50px 7%;
+            color: white;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, rgba(0,0,0,0.95) 30%, rgba(0,0,0,0.6) 70%, rgba(0,0,0,0.3) 100%);
         }
 
         .hero-content {
-            max-width: 800px;
+            position: relative;
+            z-index: 2;
+            max-width: 600px;
         }
 
-        .hero h1 {
-            font-size: 65px;
-            letter-spacing: 8px;
-            margin-bottom: 20px;
+        .hero-logo-img {
+            max-width: 260px;
+            margin-bottom: 15px;
+            filter: brightness(0) invert(1); /* Met le logo en blanc pour bien ressortir sur le fond sombre */
         }
 
-        .hero h1 span {
-            color: #d4af37;
+        .hero-sub {
+            font-size: 11px;
+            letter-spacing: 5px;
+            color: #ccc;
+            margin-bottom: 30px;
+            text-transform: uppercase;
         }
 
-        .hero p {
-            font-size: 21px;
-            margin-bottom: 35px;
-        }
-
-        .btn {
+        .shop-all-btn {
             display: inline-block;
-            padding: 15px 35px;
-            background: #d4af37;
-            color: #000;
+            padding: 12px 35px;
+            border: 2px solid white;
+            color: white;
             text-decoration: none;
             font-weight: bold;
-            border-radius: 3px;
+            font-size: 14px;
+            letter-spacing: 2px;
             transition: 0.3s;
+            margin-bottom: 25px;
+            background: rgba(0,0,0,0.4);
         }
 
-        .btn:hover {
+        .shop-all-btn:hover {
             background: white;
-            transform: translateY(-3px);
+            color: black;
+        }
+
+        .hero-desc {
+            font-size: 13px;
+            color: #aaa;
+            line-height: 1.5;
+            letter-spacing: 1px;
         }
 
         /* SECTIONS */
@@ -129,17 +152,14 @@
         }
 
         .section-title {
-            text-align: center;
-            margin-bottom: 50px;
+            text-align: left;
+            margin-bottom: 40px;
         }
 
         .section-title h2 {
             font-size: 38px;
-            margin-bottom: 10px;
-        }
-
-        .section-title p {
-            color: #777;
+            font-weight: 400;
+            letter-spacing: 1px;
         }
 
         /* CATEGORIES */
@@ -150,11 +170,11 @@
         }
 
         .category {
-            height: 300px;
+            height: 350px;
             position: relative;
             overflow: hidden;
             cursor: pointer;
-            border-radius: 5px;
+            border-radius: 4px;
         }
 
         .category img {
@@ -165,23 +185,23 @@
         }
 
         .category:hover img {
-            transform: scale(1.08);
+            transform: scale(1.05);
         }
 
         .category-overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            background: linear-gradient(transparent, rgba(0,0,0,0.7));
             display: flex;
             align-items: flex-end;
-            justify-content: center;
-            padding-bottom: 30px;
+            padding: 25px;
             color: white;
         }
 
         .category-overlay h3 {
-            font-size: 28px;
-            letter-spacing: 2px;
+            font-size: 22px;
+            letter-spacing: 1px;
+            font-weight: normal;
         }
 
         /* PRODUCTS */
@@ -193,18 +213,14 @@
 
         .product {
             background: white;
-            border-radius: 8px;
+            border-radius: 4px;
             overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
             transition: 0.3s;
         }
 
-        .product:hover {
-            transform: translateY(-7px);
-        }
-
         .product-image {
-            height: 270px;
+            height: 300px;
             overflow: hidden;
             position: relative;
         }
@@ -217,16 +233,18 @@
         }
 
         .product:hover img {
-            transform: scale(1.06);
+            transform: scale(1.05);
         }
 
         .badge {
             position: absolute;
             top: 12px;
             left: 12px;
-            background: #d4af37;
-            padding: 6px 10px;
-            font-size: 12px;
+            background: #111;
+            color: white;
+            padding: 5px 10px;
+            font-size: 10px;
+            letter-spacing: 1px;
             font-weight: bold;
         }
 
@@ -235,31 +253,34 @@
         }
 
         .product-info h3 {
-            font-size: 18px;
-            margin-bottom: 8px;
+            font-size: 16px;
+            margin-bottom: 5px;
+            font-weight: 600;
         }
 
         .product-info p {
             color: #777;
-            font-size: 14px;
-            margin-bottom: 15px;
+            font-size: 13px;
+            margin-bottom: 12px;
         }
 
         .price {
-            color: #b18b18;
-            font-size: 20px;
+            color: #111;
+            font-size: 16px;
             font-weight: bold;
             margin-bottom: 15px;
         }
 
         .add-cart {
             width: 100%;
-            padding: 11px;
+            padding: 12px;
             border: none;
             background: #111;
             color: white;
             cursor: pointer;
             transition: 0.3s;
+            font-size: 13px;
+            letter-spacing: 1px;
         }
 
         .add-cart:hover {
@@ -284,7 +305,7 @@
         }
 
         .about h2 {
-            font-size: 42px;
+            font-size: 38px;
             margin-bottom: 20px;
         }
 
@@ -295,7 +316,24 @@
         .about p {
             color: #ccc;
             line-height: 1.8;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
+            font-size: 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #d4af37;
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 13px;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: white;
         }
 
         /* CONTACT */
@@ -309,11 +347,6 @@
             text-align: center;
         }
 
-        .contact-container p {
-            margin-bottom: 20px;
-            color: #666;
-        }
-
         .contact-info {
             display: flex;
             justify-content: center;
@@ -323,11 +356,11 @@
         }
 
         .contact-item {
-            font-size: 17px;
+            font-size: 16px;
         }
 
         .contact-item strong {
-            color: #b18b18;
+            color: #111;
         }
 
         /* FOOTER */
@@ -338,13 +371,15 @@
             text-align: center;
         }
 
-        footer .logo {
+        footer img {
+            height: 35px;
             margin-bottom: 15px;
+            filter: brightness(0) invert(1);
         }
 
         footer p {
             color: #888;
-            font-size: 14px;
+            font-size: 13px;
         }
 
         /* CART POPUP */
@@ -360,6 +395,7 @@
             padding: 25px;
             transition: 0.4s;
             overflow-y: auto;
+            color: #111;
         }
 
         .cart-box.active {
@@ -383,13 +419,30 @@
         .cart-item {
             display: flex;
             justify-content: space-between;
+            align-items: center;
             border-bottom: 1px solid #eee;
             padding: 15px 0;
         }
 
+        .cart-item-controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 5px;
+        }
+
+        .cart-item-controls button {
+            background: #ddd;
+            border: none;
+            width: 25px;
+            height: 25px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
         .cart-total {
             margin-top: 25px;
-            font-size: 20px;
+            font-size: 18px;
             font-weight: bold;
         }
 
@@ -397,10 +450,18 @@
             width: 100%;
             margin-top: 20px;
             padding: 15px;
-            background: #d4af37;
+            background: #111;
+            color: white;
             border: none;
             cursor: pointer;
             font-weight: bold;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+
+        .checkout:hover {
+            background: #d4af37;
+            color: black;
         }
 
         /* MOBILE */
@@ -408,429 +469,222 @@
             .products {
                 grid-template-columns: repeat(2, 1fr);
             }
-
-            .categories {
+            .categories, .about {
                 grid-template-columns: 1fr;
-            }
-
-            .about {
-                grid-template-columns: 1fr;
-            }
-
-            nav {
-                display: none;
             }
         }
 
         @media(max-width: 600px) {
-            header {
-                padding: 0 20px;
-            }
-
-            .hero h1 {
-                font-size: 42px;
-            }
-
-            .hero p {
-                font-size: 17px;
-            }
-
-            section {
-                padding: 60px 20px;
-            }
-
-            .products {
-                grid-template-columns: 1fr;
-            }
-
-            .cart-box {
-                width: 100%;
-            }
+            header { padding: 0 20px; }
+            .hero { padding: 40px 20px; }
+            .products { grid-template-columns: 1fr; }
+            .cart-box { width: 100%; }
         }
     </style>
 </head>
-
 <body>
 
 <!-- HEADER -->
 <header>
+    <button class="menu-toggle">☰</button>
+    
+    <a href="#accueil" class="header-logo">
+        <!-- Remplacement par votre logo -->
+        <img src="https://i.ibb.co/68v8g6S9/730182931-122228362670051508-1712667969793113699-n.jpg" alt="OZARO Logo">
+    </a>
 
-    <div class="logo">
-        AZARO <span>STYLE</span>
+    <div class="header-icons">
+        <button>🔍</button>
+        <button onclick="openCart()" style="position:relative; background:none; border:none; cursor:pointer; color: white;">
+            🛒 <span id="cart-count" class="cart-badge-count">0</span>
+        </button>
     </div>
-
-    <nav>
-        <a href="#accueil">Accueil</a>
-        <a href="#categories">Catégories</a>
-        <a href="#boutique">Boutique</a>
-        <a href="#apropos">À propos</a>
-        <a href="#contact">Contact</a>
-    </nav>
-
-    <div class="cart" onclick="openCart()">
-        🛒 Panier (<span id="cart-count">0</span>)
-    </div>
-
 </header>
 
-
-<!-- HERO -->
+<!-- HERO SECTION -->
 <section class="hero" id="accueil">
-
     <div class="hero-content">
-
-        <h1>AZARO <span>STYLE</span></h1>
-
-        <p>
-            Votre style. Votre identité.
-            Découvrez notre collection de lunettes,
-            montres et bijoux.
-        </p>
-
-        <a href="#boutique" class="btn">
-            DÉCOUVRIR LA COLLECTION
-        </a>
-
+        <!-- Affichage de votre logo en grand format dans le hero -->
+        <img src="https://i.ibb.co/68v8g6S9/730182931-122228362670051508-1712667969793113699-n.jpg" alt="OZARO Logo" class="hero-logo-img">
+        <div class="hero-sub">URBAN & UNIQUE</div>
+        
+        <a href="#boutique" class="shop-all-btn">Shop all</a>
+        
+        <div class="hero-desc">
+            Get ready for the style of originality<br>discover real fashion!
+        </div>
     </div>
-
 </section>
-
 
 <!-- CATEGORIES -->
 <section id="categories">
-
     <div class="section-title">
-
-        <h2>Nos catégories</h2>
-
-        <p>
-            Des accessoires pour compléter votre style
-        </p>
-
+        <h2>Collections</h2>
     </div>
-
     <div class="categories">
-
         <div class="category">
-
-            <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=900&q=80">
-
-            <div class="category-overlay">
-                <h3>🕶️ Lunettes</h3>
-            </div>
-
+            <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=900&q=80" alt="Lunettes">
+            <div class="category-overlay"><h3>🕶️ Lunettes</h3></div>
         </div>
-
         <div class="category">
-
-            <img src="https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=900&q=80">
-
-            <div class="category-overlay">
-                <h3>⌚ Montres</h3>
-            </div>
-
+            <img src="https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=900&q=80" alt="Montres">
+            <div class="category-overlay"><h3>⌚ Montres</h3></div>
         </div>
-
         <div class="category">
-
-            <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=900&q=80">
-
-            <div class="category-overlay">
-                <h3>💎 Bijoux</h3>
-            </div>
-
+            <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=900&q=80" alt="Bijoux">
+            <div class="category-overlay"><h3>💎 Bijoux</h3></div>
         </div>
-
     </div>
-
 </section>
-
 
 <!-- PRODUCTS -->
 <section id="boutique">
-
     <div class="section-title">
-
         <h2>Nos produits</h2>
-
-        <p>
-            Découvrez nos meilleures pièces
-        </p>
-
     </div>
-
     <div class="products">
-
-        <!-- PRODUIT 1 -->
         <div class="product">
-
             <div class="product-image">
-
                 <span class="badge">NOUVEAU</span>
-
-                <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=800&q=80">
-
+                <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=800&q=80" alt="Lunettes Milano">
             </div>
-
             <div class="product-info">
-
                 <h3>Lunettes Milano</h3>
-
                 <p>Lunettes élégantes pour homme</p>
-
                 <div class="price">299 DH</div>
-
-                <button class="add-cart"
-                    onclick="addToCart('Lunettes Milano', 299)">
-                    Ajouter au panier
-                </button>
-
+                <button class="add-cart" onclick="addToCart('Lunettes Milano', 299)">Ajouter au panier</button>
             </div>
-
         </div>
 
-
-        <!-- PRODUIT 2 -->
         <div class="product">
-
             <div class="product-image">
-
-                <img src="https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=800&q=80">
-
+                <img src="https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=800&q=80" alt="Montre Classic">
             </div>
-
             <div class="product-info">
-
                 <h3>Montre Classic</h3>
-
                 <p>Montre élégante et moderne</p>
-
                 <div class="price">499 DH</div>
-
-                <button class="add-cart"
-                    onclick="addToCart('Montre Classic', 499)">
-                    Ajouter au panier
-                </button>
-
+                <button class="add-cart" onclick="addToCart('Montre Classic', 499)">Ajouter au panier</button>
             </div>
-
         </div>
 
-
-        <!-- PRODUIT 3 -->
         <div class="product">
-
             <div class="product-image">
-
                 <span class="badge">BEST SELLER</span>
-
-                <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=800&q=80">
-
+                <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=800&q=80" alt="Bracelet Premium">
             </div>
-
             <div class="product-info">
-
                 <h3>Bracelet Premium</h3>
-
                 <p>Bracelet élégant homme</p>
-
                 <div class="price">199 DH</div>
-
-                <button class="add-cart"
-                    onclick="addToCart('Bracelet Premium', 199)">
-                    Ajouter au panier
-                </button>
-
+                <button class="add-cart" onclick="addToCart('Bracelet Premium', 199)">Ajouter au panier</button>
             </div>
-
         </div>
 
-
-        <!-- PRODUIT 4 -->
         <div class="product">
-
             <div class="product-image">
-
-                <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=800&q=80">
-
+                <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=800&q=80" alt="Collier Élégance">
             </div>
-
             <div class="product-info">
-
                 <h3>Collier Élégance</h3>
-
                 <p>Bijou femme tendance</p>
-
                 <div class="price">249 DH</div>
-
-                <button class="add-cart"
-                    onclick="addToCart('Collier Élégance', 249)">
-                    Ajouter au panier
-                </button>
-
+                <button class="add-cart" onclick="addToCart('Collier Élégance', 249)">Ajouter au panier</button>
             </div>
-
         </div>
-
     </div>
-
 </section>
-
 
 <!-- ABOUT -->
 <section class="about" id="apropos">
-
-    <img src="https://images.unsplash.com/photo-1523170335258-f5ed11844a49?auto=format&fit=crop&w=1200&q=80">
-
+    <img src="https://images.unsplash.com/photo-1523170335258-f5ed11844a49?auto=format&fit=crop&w=1200&q=80" alt="À propos">
     <div>
-
-        <h2>Bienvenue chez <span>AZARO STYLE</span></h2>
-
-        <p>
-            AZARO STYLE est une boutique dédiée aux accessoires
-            modernes et élégants pour hommes et femmes.
-        </p>
-
-        <p>
-            Lunettes, montres et bijoux sélectionnés pour vous
-            permettre d'exprimer votre personnalité et votre style
-            au quotidien.
-        </p>
-
-        <a href="#boutique" class="btn">
-            VOIR NOS PRODUITS
-        </a>
-
+        <h2>Bienvenue chez <span>OZARO</span></h2>
+        <p>OZARO est une boutique dédiée aux accessoires modernes et urbains.</p>
+        <p>Lunettes, montres et bijoux sélectionnés pour vous permettre d'exprimer votre personnalité et votre style unique au quotidien.</p>
+        <a href="#boutique" class="btn">VOIR NOS PRODUITS</a>
     </div>
-
 </section>
-
 
 <!-- CONTACT -->
 <section class="contact" id="contact">
-
     <div class="section-title">
-
         <h2>Contactez-nous</h2>
-
-        <p>
-            Une question ? Nous sommes à votre disposition.
-        </p>
-
     </div>
-
     <div class="contact-container">
-
         <div class="contact-info">
-
-            <div class="contact-item">
-                📱 <strong>WhatsApp</strong><br>
-                +212 6 XX XX XX XX
-            </div>
-
-            <div class="contact-item">
-                📧 <strong>Email</strong><br>
-                contact@azarostyle.com
-            </div>
-
-            <div class="contact-item">
-                📍 <strong>Maroc</strong><br>
-                Livraison partout au Maroc
-            </div>
-
+            <div class="contact-item">📱 <strong>WhatsApp</strong><br>+212 780 091 070</div>
+            <div class="contact-item">📧 <strong>Email</strong><br>contact@ozaro.com</div>
+            <div class="contact-item">📍 <strong>Maroc</strong><br>Livraison partout au Maroc</div>
         </div>
-
     </div>
-
 </section>
-
 
 <!-- FOOTER -->
 <footer>
-
-    <div class="logo">
-        AZARO <span>STYLE</span>
-    </div>
-
-    <p>
-        © 2026 AZARO STYLE — Tous droits réservés.
-    </p>
-
+    <img src="https://i.ibb.co/68v8g6S9/730182931-122228362670051508-1712667969793113699-n.jpg" alt="OZARO Logo">
+    <p>© 2026 OZARO — Tous droits réservés.</p>
 </footer>
-
 
 <!-- PANIER -->
 <div class="cart-box" id="cart-box">
-
     <div class="cart-header">
-
         <h2>Votre panier</h2>
-
         <span class="close-cart" onclick="closeCart()">×</span>
-
     </div>
-
     <div id="cart-items">
-
         <p>Votre panier est vide.</p>
-
     </div>
-
     <div class="cart-total">
-
-        Total :
-        <span id="cart-total">0</span> DH
-
+        Total : <span id="cart-total">0</span> DH
     </div>
-
-    <button class="checkout" onclick="checkout()">
-        COMMANDER SUR WHATSAPP
-    </button>
-
+    <button class="checkout" onclick="checkout()">COMMANDER SUR WHATSAPP</button>
 </div>
 
-
 <script>
-
-    let cart = [];
-
-    /* AJOUTER AU PANIER */
+    let cart = JSON.parse(localStorage.getItem('ozaro_cart')) || [];
+    updateCart();
 
     function addToCart(name, price) {
-
-        cart.push({
-            name: name,
-            price: price
-        });
-
-        updateCart();
-
+        let existingItem = cart.find(item => item.name === name);
+        if (existingItem) {
+            existingItem.quantity += 1;
+        } else {
+            cart.push({ name: name, price: price, quantity: 1 });
+        }
+        saveAndupdate();
         openCart();
     }
 
+    function changeQuantity(index, delta) {
+        cart[index].quantity += delta;
+        if (cart[index].quantity <= 0) {
+            cart.splice(index, 1);
+        }
+        saveAndupdate();
+    }
 
-    /* ACTUALISER LE PANIER */
+    function removeFromCart(index) {
+        cart.splice(index, 1);
+        saveAndupdate();
+    }
+
+    function saveAndupdate() {
+        localStorage.setItem('ozaro_cart', JSON.stringify(cart));
+        updateCart();
+    }
 
     function updateCart() {
+        const cartItems = document.getElementById("cart-items");
+        const cartCount = document.getElementById("cart-count");
+        const cartTotal = document.getElementById("cart-total");
 
-        const cartItems =
-            document.getElementById("cart-items");
-
-        const cartCount =
-            document.getElementById("cart-count");
-
-        const cartTotal =
-            document.getElementById("cart-total");
-
-        cartCount.innerText = cart.length;
+        let totalCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+        cartCount.innerText = totalCount;
 
         if (cart.length === 0) {
-
-            cartItems.innerHTML =
-                "<p>Votre panier est vide.</p>";
-
+            cartItems.innerHTML = "<p>Votre panier est vide.</p>";
             cartTotal.innerText = "0";
-
             return;
         }
 
@@ -838,121 +692,57 @@
         let total = 0;
 
         cart.forEach((item, index) => {
-
-            total += item.price;
+            let itemTotal = item.price * item.quantity;
+            total += itemTotal;
 
             html += `
                 <div class="cart-item">
-
                     <div>
-                        <strong>${item.name}</strong>
-                        <br>
-                        ${item.price} DH
+                        <strong>${item.name}</strong><br>
+                        ${item.price} DH x ${item.quantity} = <strong>${itemTotal} DH</strong>
+                        <div class="cart-item-controls">
+                            <button onclick="changeQuantity(${index}, -1)">-</button>
+                            <span>${item.quantity}</span>
+                            <button onclick="changeQuantity(${index}, 1)">+</button>
+                        </div>
                     </div>
-
-                    <button
-                        onclick="removeFromCart(${index})"
-                        style="border:none;background:none;cursor:pointer;">
-                        ❌
-                    </button>
-
+                    <button onclick="removeFromCart(${index})" style="border:none;background:none;cursor:pointer;font-size:16px;">❌</button>
                 </div>
             `;
-
         });
 
         cartItems.innerHTML = html;
-
         cartTotal.innerText = total;
-
     }
-
-
-    /* SUPPRIMER PRODUIT */
-
-    function removeFromCart(index) {
-
-        cart.splice(index, 1);
-
-        updateCart();
-
-    }
-
-
-    /* OUVRIR PANIER */
 
     function openCart() {
-
-        document
-            .getElementById("cart-box")
-            .classList.add("active");
-
+        document.getElementById("cart-box").classList.add("active");
     }
-
-
-    /* FERMER PANIER */
 
     function closeCart() {
-
-        document
-            .getElementById("cart-box")
-            .classList.remove("active");
-
+        document.getElementById("cart-box").classList.remove("active");
     }
 
-
-    /* WHATSAPP */
-
     function checkout() {
-
         if (cart.length === 0) {
-
             alert("Votre panier est vide.");
-
             return;
-
         }
 
-        let message =
-            "Bonjour AZARO STYLE 👋%0A%0A" +
-            "Je souhaite commander :%0A";
-
+        let message = "Bonjour OZARO 👋%0A%0AJe souhaite commander :%0A";
         let total = 0;
 
         cart.forEach(item => {
-
-            message +=
-                "- " +
-                item.name +
-                " : " +
-                item.price +
-                " DH%0A";
-
-            total += item.price;
-
+            message += `- ${item.name} (${item.quantity}x) : ${item.price * item.quantity} DH%0A`;
+            total += item.price * item.quantity;
         });
 
-        message +=
-            "%0ATotal : " +
-            total +
-            " DH";
+        message += `%0ATotal : ${total} DH`;
 
-        /*
-        REMPLACE 2126XXXXXXXX PAR TON NUMERO WHATSAPP
-        */
+        const phone = "212780091070"; 
 
-        const phone = "212780091070";
-
-        window.open(
-            "https://wa.me/" +
-            phone +
-            "?text=" +
-            message,
-            "_blank"
-        );
-
+        window.open("https://wa.me/" + phone + "?text=" + message, "_blank");
     }
-
 </script>
 
 </body>
