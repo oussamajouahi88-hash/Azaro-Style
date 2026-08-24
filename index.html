@@ -52,10 +52,10 @@
             color: white;
         }
 
-        /* Style pour intégrer votre logo dans l'en-tête */
         .header-logo img {
-            height: 40px;
+            height: 45px;
             object-fit: contain;
+            mix-blend-mode: screen; /* Permet de fondre le fond du logo dans le noir du header */
         }
 
         .header-icons {
@@ -107,9 +107,9 @@
         }
 
         .hero-logo-img {
-            max-width: 260px;
+            max-width: 280px;
             margin-bottom: 15px;
-            object-fit: contain;
+            mix-blend-mode: screen; /* Fusionne le fond gris du logo avec le fond sombre du hero */
         }
 
         .hero-sub {
@@ -374,7 +374,7 @@
         footer img {
             height: 35px;
             margin-bottom: 15px;
-            filter: brightness(0) invert(1);
+            mix-blend-mode: screen;
         }
 
         footer p {
@@ -489,7 +489,6 @@
     <button class="menu-toggle">☰</button>
     
     <a href="#accueil" class="header-logo">
-        <!-- Remplacement par votre logo -->
         <img src="https://i.ibb.co/68v8g6S9/730182931-122228362670051508-1712667969793113699-n.jpg" alt="OZARO Logo">
     </a>
 
@@ -504,7 +503,6 @@
 <!-- HERO SECTION -->
 <section class="hero" id="accueil">
     <div class="hero-content">
-        <!-- Affichage de votre logo en grand format dans le hero -->
         <img src="https://i.ibb.co/68v8g6S9/730182931-122228362670051508-1712667969793113699-n.jpg" alt="OZARO Logo" class="hero-logo-img">
         <div class="hero-sub">URBAN & UNIQUE</div>
         
