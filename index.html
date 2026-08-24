@@ -45,17 +45,15 @@
         }
 
         .header-logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
             text-decoration: none;
             color: white;
+            font-size: 24px;
+            font-weight: 900;
+            letter-spacing: 3px;
         }
 
-        .header-logo img {
-            height: 45px;
-            object-fit: contain;
-            mix-blend-mode: screen; /* Permet de fondre le fond du logo dans le noir du header */
+        .header-logo span {
+            color: #d4af37;
         }
 
         .header-icons {
@@ -106,10 +104,16 @@
             max-width: 600px;
         }
 
-        .hero-logo-img {
-            max-width: 280px;
-            margin-bottom: 15px;
-            mix-blend-mode: screen; /* Fusionne le fond gris du logo avec le fond sombre du hero */
+        .hero-logo-text {
+            font-size: 48px;
+            font-weight: 900;
+            letter-spacing: 5px;
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        .hero-logo-text span {
+            color: #d4af37;
         }
 
         .hero-sub {
@@ -371,10 +375,16 @@
             text-align: center;
         }
 
-        footer img {
-            height: 35px;
+        footer .footer-logo {
+            font-size: 20px;
+            font-weight: bold;
+            letter-spacing: 2px;
             margin-bottom: 15px;
-            mix-blend-mode: screen;
+            color: white;
+        }
+
+        footer .footer-logo span {
+            color: #d4af37;
         }
 
         footer p {
@@ -488,9 +498,7 @@
 <header>
     <button class="menu-toggle">☰</button>
     
-    <a href="#accueil" class="header-logo">
-        <img src="images/logo.jpg" alt="OZARO Logo">
-    </a>
+    <a href="#accueil" class="header-logo">OZ<span>ARO</span></a>
 
     <div class="header-icons">
         <button>🔍</button>
@@ -503,7 +511,7 @@
 <!-- HERO SECTION -->
 <section class="hero" id="accueil">
     <div class="hero-content">
-        <img src="images/logo.jpg" alt="OZARO Logo" class="hero-logo-img">
+        <div class="hero-logo-text">OZ<span>ARO</span></div>
         <div class="hero-sub">URBAN & UNIQUE</div>
         
         <a href="#boutique" class="shop-all-btn">Shop all</a>
@@ -620,7 +628,7 @@
 
 <!-- FOOTER -->
 <footer>
-    <img src="images/logo.jpg" alt="OZARO Logo">
+    <div class="footer-logo">OZ<span>ARO</span></div>
     <p>© 2026 OZARO — Tous droits réservés.</p>
 </footer>
 
